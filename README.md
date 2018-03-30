@@ -20,7 +20,7 @@ npm install torrent-search-api
 - KickassTorrents
 - Rarbg
 - TorrentProject
-- T411.si
+- ExtraTorrent
 
 ## Features
 
@@ -83,6 +83,9 @@ console.log(torrentSearch.getActiveProviders());
 ### Enable provider
 
 ```js
+
+// Enable public providers
+torrentSearch.enablePublicProviders();
 
 // Enable public provider
 torrentSearch.enableProvider('Torrent9');
@@ -161,7 +164,23 @@ torrentSearch.getTorrentDetails(torrent)
         console.log(err);
     });
 
-````
+```
+
+### Torrent magnet
+
+```js
+
+// Get magnet url
+// torrent: taken from a search result
+torrentSearch.getMagnet(torrent)
+    .then(magnet => {
+        console.log(magnet);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
+```
 
 ### Download torrent
 
@@ -186,7 +205,7 @@ torrentSearch.downloadTorrent(torrent, filnamePath)
     .catch(err => {
         console.log(err);
     });
-````
+```
 
 ## License
 
